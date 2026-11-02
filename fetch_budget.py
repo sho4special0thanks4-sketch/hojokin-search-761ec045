@@ -6,6 +6,7 @@
 - 履歴は 予算消化率の履歴.csv に、日付ごとに1行ずつ追記する。
 """
 import csv, datetime as dt, json, os, re, sys, urllib.request
+from zoneinfo import ZoneInfo
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "budget.json")
@@ -67,7 +68,7 @@ def parse(key, text):
 
 
 def main():
-    now = dt.datetime.now().astimezone()
+    now = dt.datetime.now(ZoneInfo("Asia/Tokyo"))  # 日本時間で保存（GitHubの実行環境は世界標準時のため）
     prev = {}
     if os.path.exists(OUT):
         try:
