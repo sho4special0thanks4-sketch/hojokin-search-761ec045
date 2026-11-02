@@ -1,0 +1,29 @@
+name: 予算の使用割合を毎日更新
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # 毎日 11:30 JST（国の公式サイトは毎日午前中に更新される）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: budget
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 公式サイトから取得
+        run: python3 fetch_budget.py || echo "一部の取得に失敗（前回の値を残し、失敗の印を付けて保存）"
+      - name: 変更があれば反映
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add budget.json budget_history.csv
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git commit -m "予算の使用割合を更新 $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
