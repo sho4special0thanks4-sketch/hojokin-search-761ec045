@@ -1,36 +1,36 @@
 {
-  "fetched_at": "2026-11-11T18:42:06+09:00",
+  "fetched_at": "2026-11-12T19:02:35+09:00",
   "items": {
     "window": {
-      "asof": "2026-11-11T00:00",
+      "asof": "2026-11-12T00:00",
       "pct": 36,
       "label": "先進的窓リノベ2026",
       "url": "https://window-renovation2026.env.go.jp/",
       "ok": true,
       "stale": false,
       "error": null,
-      "fetched_at": "2026-11-11T18:42:06+09:00"
+      "fetched_at": "2026-11-12T19:02:35+09:00"
     },
     "kyuto": {
-      "asof": "2026-11-11T00:00",
-      "pct": 57,
-      "removal_pct": 28,
+      "asof": "2026-11-12T00:00",
+      "pct": 58,
+      "removal_pct": 29,
       "label": "給湯省エネ2026",
       "url": "https://kyutou-shoene2026.meti.go.jp/",
       "ok": true,
       "stale": false,
       "error": null,
-      "fetched_at": "2026-11-11T18:42:06+09:00"
+      "fetched_at": "2026-11-12T19:02:35+09:00"
     },
     "mirai_reform": {
-      "asof": "2026-11-11T00:00",
+      "asof": "2026-11-12T00:00",
       "pct": 14,
       "label": "みらいエコ住宅2026（リフォーム）",
       "url": "https://mirai-eco2026.mlit.go.jp/",
       "ok": true,
       "stale": false,
       "error": null,
-      "fetched_at": "2026-11-11T18:42:06+09:00"
+      "fetched_at": "2026-11-12T19:02:35+09:00"
     }
   },
   "errors": []
